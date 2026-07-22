@@ -1,6 +1,14 @@
 name: API workflow
 
-on: [push, pull_request]
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -19,6 +27,8 @@ jobs:
       run: pytest --cov=api.calculator --cov-report=xml:calculator-coverage.xml
     - name: Run tests and collect coverage for smiles
       run: pytest --cov=api.smiles --cov-report=xml:smiles-coverage.xml
+    - name: Verify coverage reports exist
+      run: ls -la calculator-coverage.xml smiles-coverage.xml
     - name: Upload coverage reports to Codecov with GitHub Action
       uses: codecov/codecov-action@v5
       with:

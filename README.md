@@ -1,4 +1,4 @@
-[![codecov](https://codecov.io/github/ayushnri2308/codecov-demo/graph/badge.svg?token=4U7B9JSRF4)](https://codecov.io/github/ayushnri2308/codecov-demo)
+[![codecov](https://codecov.io/gh/ayushnri2308/codecov-demo/branch/main/graph/badge.svg)](https://codecov.io/gh/ayushnri2308/codecov-demo)
 
 
 # codecov-demo
