@@ -8,6 +8,8 @@ jobs:
     name: Test python API
     steps:
     - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
     - uses: actions/setup-python@v2
       with:
         python-version: '3.10'
@@ -19,5 +21,9 @@ jobs:
       run: pytest --cov=api.smiles --cov-report=xml:smiles-coverage.xml
     - name: Upload coverage reports to Codecov with GitHub Action
       uses: codecov/codecov-action@v5
-      env:
-        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        files: calculator-coverage.xml,smiles-coverage.xml
+        disable_search: true
+        fail_ci_if_error: true
+        verbose: true
