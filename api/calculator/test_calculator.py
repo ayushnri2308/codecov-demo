@@ -32,4 +32,9 @@ def test_divide():
 
 def test_divide_by_0():
     assert Calculator.divide(2.0, 0) == 'Cannot divide by 0'    
+
+
+def test_power():
+    assert Calculator.power(2, 3) == 8
+    assert Calculator.power(5, 0) == 1
 # codecov baseline test
