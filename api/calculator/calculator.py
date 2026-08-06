@@ -20,3 +20,4 @@ class Calculator:
         if y == 0:
             return 'Cannot modulo by 0'
         return x % y
+# local-codecov-pr-probe
