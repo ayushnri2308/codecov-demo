@@ -1,0 +1,10 @@
+[run]
+relative_files = True
+source =
+    api
+    lib
+
+[report]
+omit =
+    */__pycache__/*
+    */.venv/*
